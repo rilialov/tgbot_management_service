@@ -1,5 +1,7 @@
 package management_service.entity;
 
+import users_service.UserDTO;
+
 import java.time.LocalDateTime;
 
 public class Tracking {
@@ -13,4 +15,6 @@ public class Tracking {
     private String trackingNote;
 
     private Task task;
+
+    private UserDTO user;
 }
