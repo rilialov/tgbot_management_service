@@ -1,11 +1,12 @@
 package management_service.dao;
 
 import management_service.entity.Task;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class TasksDAOImplTest {
 
@@ -20,15 +21,15 @@ class TasksDAOImplTest {
     void getById() {
         Task task = tasksDAO.getById(1L);
 
-        Assertions.assertNotNull(task);
+        assertNotNull(task);
     }
 
     @Test
     void getAll() {
         List<Task> tasks = tasksDAO.getAll();
 
-        Assertions.assertNotNull(tasks);
-        Assertions.assertTrue(tasks.size() > 0);
+        assertNotNull(tasks);
+        assertTrue(tasks.size() > 0);
     }
 
     @Test
@@ -37,7 +38,7 @@ class TasksDAOImplTest {
         Task created = tasksDAO.create(task);
 
         tasksDAO.delete(created);
-        Assertions.assertNotNull(created);
+        assertNotNull(created);
     }
 
     @Test
@@ -51,8 +52,8 @@ class TasksDAOImplTest {
 
         Task updated = tasksDAO.getById(created.getId());
         tasksDAO.delete(created);
-        Assertions.assertEquals("Changed Name", updated.getTaskName());
-        Assertions.assertEquals("Changed Note", updated.getTaskNote());
+        assertEquals("Changed Name", updated.getTaskName());
+        assertEquals("Changed Note", updated.getTaskNote());
     }
 
     @Test
@@ -63,6 +64,6 @@ class TasksDAOImplTest {
         tasksDAO.delete(created);
 
         Task deleted = tasksDAO.getById(created.getId());
-        Assertions.assertNull(deleted);
+        assertNull(deleted);
     }
 }
