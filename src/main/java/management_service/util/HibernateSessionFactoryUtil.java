@@ -2,6 +2,7 @@ package management_service.util;
 
 import management_service.entity.Report;
 import management_service.entity.Task;
+import management_service.entity.Tracking;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -19,6 +20,7 @@ public class HibernateSessionFactoryUtil {
                 Configuration configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(Task.class);
                 configuration.addAnnotatedClass(Report.class);
+                configuration.addAnnotatedClass(Tracking.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (Exception e) {
