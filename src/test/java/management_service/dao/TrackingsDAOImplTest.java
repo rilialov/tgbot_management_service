@@ -38,7 +38,7 @@ class TrackingsDAOImplTest {
     void create() {
         tasksDAO = new TasksDAOImpl();
         Tracking tracking = new Tracking(LocalDateTime.of(2022, 5, 23, 11, 5, 10),
-                "Track Note", tasksDAO.getById(1L), 1L);
+                "Track Note", tasksDAO.getById(1L), "95513b457c");
         Tracking created = trackingsDAO.create(tracking);
 
         trackingsDAO.delete(created);
@@ -49,7 +49,7 @@ class TrackingsDAOImplTest {
     void update() {
         tasksDAO = new TasksDAOImpl();
         Tracking tracking = new Tracking(LocalDateTime.of(2022, 5, 23, 11, 5, 10),
-                "Track Note", tasksDAO.getById(1L), 1L);
+                "Track Note", tasksDAO.getById(1L), "95513b457c");
         Tracking created = trackingsDAO.create(tracking);
 
         created.setEndTime(LocalDateTime.of(2022, 5, 23, 16, 10, 30));
@@ -66,7 +66,7 @@ class TrackingsDAOImplTest {
     void delete() {
         tasksDAO = new TasksDAOImpl();
         Tracking tracking = new Tracking(LocalDateTime.of(2022, 5, 23, 11, 5, 10),
-                "Track Note", tasksDAO.getById(1L), 1L);
+                "Track Note", tasksDAO.getById(1L), "95513b457c");
         Tracking created = trackingsDAO.create(tracking);
 
         trackingsDAO.delete(created);

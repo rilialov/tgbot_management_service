@@ -27,12 +27,12 @@ public class Tracking {
     private Task task;
 
     @Column(name = "\"user\"")
-    private long user;
+    private String user;
 
     public Tracking() {
     }
 
-    public Tracking(LocalDateTime startTime, String trackingNote, Task task, long user) {
+    public Tracking(LocalDateTime startTime, String trackingNote, Task task, String user) {
         this.startTime = startTime;
         this.trackingNote = trackingNote;
         this.task = task;
@@ -75,11 +75,11 @@ public class Tracking {
         this.task = task;
     }
 
-    public long getUser() {
+    public String getUser() {
         return user;
     }
 
-    public void setUser(long user) {
+    public void setUser(String user) {
         this.user = user;
     }
 

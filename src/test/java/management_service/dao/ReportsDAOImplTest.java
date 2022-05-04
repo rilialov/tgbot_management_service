@@ -35,7 +35,7 @@ class ReportsDAOImplTest {
 
     @Test
     void create() {
-        Report report = new Report(LocalDate.of(2022, 5, 17), 216000L, 100L);
+        Report report = new Report(LocalDate.of(2022, 5, 17), "95513b457c");
         Report created = reportsDAO.create(report);
 
         reportsDAO.delete(created);
@@ -44,7 +44,7 @@ class ReportsDAOImplTest {
 
     @Test
     void update() {
-        Report report = new Report(LocalDate.of(2022, 5, 7), 216000L, 1L);
+        Report report = new Report(LocalDate.of(2022, 5, 7),  "95513b457c");
         Report created = reportsDAO.create(report);
 
         created.setDate(LocalDate.of(2022, 7, 18));
@@ -59,7 +59,7 @@ class ReportsDAOImplTest {
 
     @Test
     void delete() {
-        Report report = new Report(LocalDate.of(2022, 5, 7), 216000L, 1L);
+        Report report = new Report(LocalDate.of(2022, 5, 7),  "95513b457c");
         Report created = reportsDAO.create(report);
 
         reportsDAO.delete(created);
