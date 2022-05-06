@@ -19,9 +19,9 @@ public class Main {
         //get user and summ all todays trackings
 
         //new report today, set user
-        Report report = new Report(LocalDate.now(), userDTO.getChatId());
+//        Report report = new Report(LocalDate.now(), userDTO.getChatId());
 
         //set full time
-        report.setFullTime(123);
+//        report.setFullTime(123);
     }
 }

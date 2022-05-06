@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS tgbot_management.trackings (
     end_time 		TIMESTAMP WITHOUT TIME ZONE,
     tracking_note	varchar(100) NOT NULL,
     task			bigint,
-    "user" 			varchar(250),
+    "user" 			bigint,
     FOREIGN KEY (task) REFERENCES tgbot_management.tasks(id)
 );
 
@@ -21,5 +21,5 @@ CREATE TABLE IF NOT EXISTS tgbot_management.reports (
     id				bigserial NOT NULL PRIMARY KEY,
     "date" 			date NOT NULL,
     full_time		bigint,
-    "user" 			varchar(250)
+    "user" 			bigint
 );

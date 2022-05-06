@@ -27,13 +27,13 @@ public class Tracking {
     private Task task;
 
     @Column(name = "\"user\"")
-    private String user;
+    private long user;
 
     public Tracking() {
     }
 
-    public Tracking(LocalDateTime startTime, String trackingNote, Task task, String user) {
-        this.startTime = startTime;
+    public Tracking(String trackingNote, Task task, long user) {
+        this.startTime = LocalDateTime.now();
         this.trackingNote = trackingNote;
         this.task = task;
         this.user = user;
@@ -45,10 +45,6 @@ public class Tracking {
 
     public LocalDateTime getStartTime() {
         return startTime;
-    }
-
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
     }
 
     public LocalDateTime getEndTime() {
@@ -75,11 +71,11 @@ public class Tracking {
         this.task = task;
     }
 
-    public String getUser() {
+    public long getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(long user) {
         this.user = user;
     }
 

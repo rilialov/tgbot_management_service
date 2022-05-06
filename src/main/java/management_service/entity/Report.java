@@ -20,12 +20,12 @@ public class Report {
     private long fullTime;
 
     @Column(name = "\"user\"")
-    private String user;
+    private long user;
 
     public Report() {
     }
 
-    public Report(LocalDate date, String user) {
+    public Report(LocalDate date, long user) {
         this.date = date;
         this.user = user;
     }
@@ -50,11 +50,11 @@ public class Report {
         this.fullTime = fullTime;
     }
 
-    public String getUser() {
+    public long getUser() {
         return user;
     }
 
-    public void setUser(String user) {
+    public void setUser(long user) {
         this.user = user;
     }
 
