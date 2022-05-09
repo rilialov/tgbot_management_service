@@ -10,7 +10,7 @@ import java.util.List;
 public class ReportsDAOImpl implements ReportsDAO<Report> {
 
     @Override
-    public Report getById(Long id) {
+    public Report getById(long id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Report.class, id);
     }
 

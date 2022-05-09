@@ -35,6 +35,14 @@ class TrackingsDAOImplTest {
     }
 
     @Test
+    void getUserTrackings() {
+        List<Tracking> trackings = trackingsDAO.getUserTrackings(1L);
+
+        assertNotNull(trackings);
+        assertTrue(trackings.size() > 0);
+    }
+
+    @Test
     void create() {
         tasksDAO = new TasksDAOImpl();
         Tracking tracking = new Tracking("Track Note", tasksDAO.getById(1L), 1L);

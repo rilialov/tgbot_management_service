@@ -1,5 +1,5 @@
 package management_service.dao;
 
 public interface ReportsDAO<T> extends DAO<T> {
-    T getById(Long id);
+    T getById(long id);
 }

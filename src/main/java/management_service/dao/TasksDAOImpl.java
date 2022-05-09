@@ -10,7 +10,7 @@ import java.util.List;
 public class TasksDAOImpl implements TasksDAO<Task> {
 
     @Override
-    public Task getById(Long id) {
+    public Task getById(long id) {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Task.class, id);
     }
 
