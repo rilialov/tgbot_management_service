@@ -19,7 +19,7 @@ public class TrackingsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String uri = req.getRequestURI();
+        String uri = req.getRequestURI().substring(req.getContextPath().length());
         String json;
 
         if (uri.substring("/trackings/".length()).equals("")) {
@@ -48,7 +48,7 @@ public class TrackingsServlet extends HttpServlet {
 
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String uri = req.getRequestURI();
+        String uri = req.getRequestURI().substring(req.getContextPath().length());
         long id;
 
         if (uri.substring("/trackings/".length()).equals("")) {
@@ -78,7 +78,7 @@ public class TrackingsServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String uri = req.getRequestURI();
+        String uri = req.getRequestURI().substring(req.getContextPath().length());
         long id;
 
         if (uri.substring("/trackings/".length()).equals("")) {
